@@ -100,3 +100,38 @@ checkingForUniqueness = (input) => {
     }
   }
 }
+
+
+// Question #5: Array Sorting
+// Write an algorithm that sorts an array without using the sort() method. There are many different sorting algorithms - take the time to read about the following:
+
+// Quick sort
+// Merge sort
+// Heap sort
+// Insertion sort
+// Bubble sort
+// Selection sort
+// You may implement any of the above algorithms (or your own) to solve the problem - as long as it doesn't use sort().
+
+// Example
+// Input: [9, 2, 7, 12]9, 2, 7, 12
+
+// Output: [2, 7, 9, 12]
+
+arraySorting = (input) => {
+  if (Array.isArray(input)) {
+    let result = [];
+    let compare = input;
+    for (let i = 0; i < input.length; i++) {
+      for (let x = 0; x < input.length; x++) {
+        if (input[x] === Math.min(...compare)) {
+          result.push(compare[x]);
+          compare.splice(x, 1);
+        }
+      }
+    }
+    return result;
+  } else {
+    return;
+  }
+}
