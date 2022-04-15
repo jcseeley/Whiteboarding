@@ -114,20 +114,18 @@ checkingForUniqueness = (input) => {
 // You may implement any of the above algorithms (or your own) to solve the problem - as long as it doesn't use sort().
 
 // Example
-// Input: [9, 2, 7, 12]9, 2, 7, 12
+// Input: [9, 2, 7, 12]
 
 // Output: [2, 7, 9, 12]
 
 arraySorting = (input) => {
   if (Array.isArray(input)) {
     let result = [];
-    let compare = input;
-    for (let i = 0; i < input.length; i++) {
-      for (let x = 0; x < input.length; x++) {
-        if (input[x] === Math.min(...compare)) {
-          result.push(compare[x]);
-          compare.splice(x, 1);
-        }
+    for (let x = 0; x < input.length; x++) {
+      if (input[x] === Math.min(...input)) {
+        result.push(input[x]);
+        input.splice(x, 1);
+        x = -1;
       }
     }
     return result;
