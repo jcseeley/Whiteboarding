@@ -48,6 +48,11 @@ arrayDeduping = (input) => {
 
 //* Output: "3ab2c4da"
 
+//instantiate empty
+//determine character and # of repeats
+//if 1, push character, if > 1, push count + character
+//join array, convert to string, return string
+
 compressingStrings = (input) => {
   if (typeof(input) !== 'string') { //determine if input is a string, if not, return undefined
     return;// undefined
@@ -117,6 +122,8 @@ checkingForUniqueness = (input) => {
 // Input: [9, 2, 7, 12]
 
 // Output: [2, 7, 9, 12]
+
+//determine lowest value, push to array, repeat, return array in ascending order
 
 arraySorting = (input) => {
   if (Array.isArray(input)) {// determine if input is array. if not, return undefined
