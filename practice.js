@@ -53,11 +53,16 @@ compressingStrings = (input) => {
     return;
   } else {
     let result = [];
-    let compare = input.toString("");
-    let counter = 0;
+    let compare = input.split("");
+    let counter = 1;
     for (let i = 0; i < compare.length; i++) {
       if (compare[i] === compare[i+1]) {
         counter++;
+      } else if (counter === 1) {
+        result.push(compare[i]);
+      } else {
+        result.push(counter + compare[i]);
+        counter = 1;
       }
     }
     return result.join("").toString();
