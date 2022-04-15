@@ -68,3 +68,24 @@ compressingStrings = (input) => {
     return result.join("").toString();
   }
 }
+
+
+//TODO Question #4: Checking for Uniqueness
+//TODO Write an algorithm that determines whether all the elements in a string are unique. You may not convert the string into an array or use array methods to solve this problem. The algorithm should return a boolean.
+
+//TODO Example
+//TODO Input: "hello"
+
+//TODO Output: false
+
+//TODO Input: "copyright"
+
+//TODO Output: true
+
+checkingForUniqueness = (input) => {
+  if (typeof(input) !== 'string') {
+    return;
+  } else {
+    
+  }
+}
