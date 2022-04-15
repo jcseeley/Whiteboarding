@@ -27,7 +27,7 @@ if (typeof(input) !== 'string') {
 //? Write an algorithm that removes duplicates from an array. Do not use a function like filter() to solve this. Once you have solved the problem, demonstrate how it can be solved with filter(). Solve the problem with and without recursion.
 
 //? Example
-//? Input: [7, 9, "hi", 12, "hi" 7, 53]
+//? Input: [7, 9, "hi", 12, "hi", 7, 53]
 
 //? Output: [7, 9, "hi", 12, 53]
 
@@ -40,3 +40,26 @@ arrayDeduping = (input) => {
 }
 
 
+//* Question #3: Compressing Strings
+//* Write an algorithm that takes a string with repeated characters and compresses them, using a number to show how many times the repeated character has been compressed. For instance, aaa would be written as 3a. Solve the problem with and without recursion.
+
+//* Example
+//* Input: "aaabccdddda"
+
+//* Output: "3ab2c4da"
+
+compressingStrings = (input) => {
+  if (typeof(input) !== 'string') {
+    return;
+  } else {
+    let result = [];
+    let compare = input.toString("");
+    let counter = 0;
+    for (let i = 0; i < compare.length; i++) {
+      if (compare[i] === compare[i+1]) {
+        counter++;
+      }
+    }
+    return result.join("").toString();
+  }
+}
