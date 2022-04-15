@@ -86,6 +86,17 @@ checkingForUniqueness = (input) => {
   if (typeof(input) !== 'string') {
     return;
   } else {
-    
+    let compare = new Set(input);
+    let counter = 0;
+    compare.forEach(function(e) {
+      if (e === input[counter]) {
+        counter++;
+      }
+    })
+    if (counter === input.length) {
+      return true;
+    } else {
+      return false;
+    }
   }
 }
