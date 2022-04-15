@@ -13,7 +13,7 @@ if (typeof(input) !== 'string') {
   return;
   } else if (input.includes(" ")) {
     let result = input.split(" ")
-    for (let i=0; i<result.length-1; i++) {
+    for (let i = 0; i < result.length - 1; i++) {
       result[i] = result[i] + "%20";
     }
     return result.join("").toString();
@@ -21,3 +21,22 @@ if (typeof(input) !== 'string') {
     return input;
   }
 }
+
+
+//? Question #2: Array Deduping
+//? Write an algorithm that removes duplicates from an array. Do not use a function like filter() to solve this. Once you have solved the problem, demonstrate how it can be solved with filter(). Solve the problem with and without recursion.
+
+//? Example
+//? Input: [7, 9, "hi", 12, "hi" 7, 53]
+
+//? Output: [7, 9, "hi", 12, 53]
+
+arrayDeduping = (input) => {
+  if (Array.isArray(input)) {
+    return [...new Set(input)]
+  } else {
+    return;
+  }
+}
+
+
