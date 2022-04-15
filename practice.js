@@ -49,23 +49,23 @@ arrayDeduping = (input) => {
 //* Output: "3ab2c4da"
 
 compressingStrings = (input) => {
-  if (typeof(input) !== 'string') {
-    return;
+  if (typeof(input) !== 'string') { //determine if input is a string, if not, return undefined
+    return;// undefined
   } else {
-    let result = [];
-    let compare = input.split("");
-    let counter = 1;
-    for (let i = 0; i < compare.length; i++) {
-      if (compare[i] === compare[i+1]) {
+    let result = [];// instantiate empty result array
+    let compare = input.split("");// split string into characters
+    let counter = 1; //determine # of repeated instances
+    for (let i = 0; i < compare.length; i++) {// loop through character array
+      if (compare[i] === compare[i+1]) {// if character matches next character, counter++
         counter++;
-      } else if (counter === 1) {
+      } else if (counter === 1) {// if it doesn't match, push character to result
         result.push(compare[i]);
       } else {
-        result.push(counter + compare[i]);
-        counter = 1;
+        result.push(counter + compare[i]);// if repeats, push counter + character to array 
+        counter = 1;// reset counter to 1
       }
     }
-    return result.join("").toString();
+    return result.join("").toString();//return array, joined, to string
   }
 }
 
@@ -119,17 +119,17 @@ checkingForUniqueness = (input) => {
 // Output: [2, 7, 9, 12]
 
 arraySorting = (input) => {
-  if (Array.isArray(input)) {
-    let result = [];
-    for (let x = 0; x < input.length; x++) {
-      if (input[x] === Math.min(...input)) {
-        result.push(input[x]);
-        input.splice(x, 1);
-        x = -1;
+  if (Array.isArray(input)) {// determine if input is array. if not, return undefined
+    let result = [];// instantiate array to push values into
+    for (let x = 0; x < input.length; x++) {// loop through array
+      if (input[x] === Math.min(...input)) {// check if value matchs Math.min(), check next
+        result.push(input[x]);// if so, push to result array, repeat for next lowest
+        input.splice(x, 1);// remove value from input array, remove next lowest
+        x = -1;// reset x to -1 so ++ brings to 0 and restarts from 0 position of array
       }
     }
-    return result;
+    return result;// return result array with all values
   } else {
-    return;
+    return;// undefined
   }
 }
