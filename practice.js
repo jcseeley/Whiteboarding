@@ -16,7 +16,7 @@ if (typeof(input) !== 'string') {
     for (let i = 0; i < result.length - 1; i++) {
       result[i] = result[i] + "%20";
     }
-    return result.join("").toString();
+    return result.join("");
   } else {
     return input;
   }
@@ -70,7 +70,7 @@ compressingStrings = (input) => {
         counter = 1;// reset counter to 1
       }
     }
-    return result.join("").toString();//return array, joined, to string
+    return result.join("");//return array joined into string
   }
 }
 
